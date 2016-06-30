@@ -12,14 +12,12 @@ func main() {
 	if err != nil {
 	  log.Println(err)
 	}
-	var id int
 	var str string
-	q := "SELECT id, animal, name FROM go.animals WHERE id = ?"
-
-	rows, err := db.Query(q, 1)
-	if err != nil {
-	  log.Fatal(err)
+	err = db.QueryRow(
+	  "SELECT name FROM go.animals WHERE id=1").Scan(&str)
+	if err != nil && err != sql.ErrNoRows {
+	  log.Println(err)
 	}
-	//Close Connection
+	  log.Println(str)
 	defer db.Close()
 }
