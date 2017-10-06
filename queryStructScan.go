@@ -1,8 +1,6 @@
 package main
 
-/*This is an example of how to retrieve multiple values from a single MySQL database record.
-The values in the connection string on line 14 have been converted into BASH variables
-and are intended to be modified by the user for functionality*/
+/*This is an example of how to scan values into a struct*/
 
 import (
 	"database/sql"
