@@ -76,7 +76,7 @@ func main() {
 	sStatus := new(mount)
 
 	//Connect to MySQL
-	db, err := sql.Open("mysql", "script:script1!@tcp(akalaj-lab-2003.opslan.smartsheet.com:3306)/dbaTesting")
+	db, err := sql.Open("mysql", "XXXX:XXXX@tcp(XXXXXXX:3306)/XXXXTesting")
 
 	if err != nil {
 		log.Println(err)
