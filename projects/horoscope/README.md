@@ -4,6 +4,6 @@ In an effor to understand go web programming, I will be creating an interactive 
 
 # Phase I
 
--Create a database using Golang (objects held in /db)
--Create a table called 'signs' using Golang
+-Create a database using Golang (objects held in /db)<br >
+-Create a table called 'signs' using Golang<br >
 -Create an interactive commandline program to search for dates using Golang
