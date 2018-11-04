@@ -1,7 +1,5 @@
 # HOROSCOPE PROJECT
 
-<h1>Interactive Horoscope Project</h1>
-
 In an effor to understand go web programming, I will be creating an interactive Go web app to accept a users birthday and return what astrological sign that user has.
 
 #Phase I
