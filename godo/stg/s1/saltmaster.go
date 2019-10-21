@@ -12,7 +12,7 @@ import (
 
 //VARIABLES
 const (
-	pat = ""
+	pat =""
 )
 
 //STRUCTS
@@ -79,45 +79,11 @@ func createSaltMaster(masterName string) {
 
 }
 
-
 func main() {
 	//Build config struct
 	var configFile conf
 	configFile.getConf()
 
-	//create project Saltmaster
 	createSaltMaster(configFile.Projectname)
-	
-	//build auth object
-	tokenSource := &TokenSource{
-		AccessToken: pat,
-	}
-
-	oauthClient := oauth2.NewClient(context.Background(), tokenSource)
-	client := godo.NewClient(oauthClient)
-
-	//determine Droplet config
-	var dropletNames []string
-
-	for i := 1; i < configFile.Members+1; i++ {
-		dropletNames = append(dropletNames, fmt.Sprintf("%s-%v", configFile.Projectname, i))
-	}
-
-	mykey := godo.DropletCreateSSHKey{ID: 25339235}
-	mykeys := []godo.DropletCreateSSHKey{mykey}
-
-	createRequest := &godo.DropletMultiCreateRequest{
-		Names:  dropletNames,
-		Region: configFile.Location,
-		Size:   configFile.Size,
-		Image: godo.DropletCreateImage{
-			Slug: configFile.Image,
-		},
-		SSHKeys: mykeys,
-	}
-
-	ctx := context.TODO()
-
-	client.Droplets.CreateMultiple(ctx, createRequest)
 
 }

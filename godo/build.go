@@ -7,7 +7,7 @@ import (
 )
 
 const (
-	pat = "83621c2023b2d28b1934b34d3179e6f455911b8f046f029ffbc2088cc6c4a430"
+	pat = ""
 )
 
 type TokenSource struct {
